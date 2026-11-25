@@ -1,6 +1,6 @@
 public class OrgaPaysUE {
 
-    public Pays_UE[] pays = new Pays_UE[27];
+    public Pays_UE[] pays = new Pays_UE[28];
 
     public OrgaPaysUE() {
         pays[0] = new Pays_UE("Allemagne", "Berlin", 83467117, 357569, 1958);
@@ -23,12 +23,115 @@ public class OrgaPaysUE {
         pays[17] = new Pays_UE("Luxembourg", "Luxembourg", 690959, 2595, 1958);
         pays[18] = new Pays_UE("Malte", "La Valette", 588254, 316, 2004);
         pays[19] = new Pays_UE("Pays-Bas", "Amsterdam", 18130208, 37391, 1958);
-        pays[20] = new Pays_UE("Pologne", "Varsovie",36332765, 311928, 2004);
+        pays[20] = new Pays_UE("Pologne", "Varsovie", 36332765, 311928, 2004);
         pays[21] = new Pays_UE("Portugal", "Lisbonne", 11424031, 92226, 1986);
         pays[22] = new Pays_UE("Roumanie", "Bucarest", 19041322, 238398, 2007);
         pays[23] = new Pays_UE("Slovaquie", "Bratislava", 5409407, 49035, 2004);
         pays[24] = new Pays_UE("Slovénie", "Ljubljana", 2135107, 20273, 2004);
         pays[25] = new Pays_UE("Suède", "Stockholm", 10605529, 447424, 1995);
         pays[26] = new Pays_UE("Tchéquie", "Prague", 10915839, 78871, 2004);
+    }
+
+
+    public Pays_UE[] sortNom() {
+        boolean flag = true;
+        System.out.println();
+        for (int i = 0; i < pays.length; i++) {
+            for (int j = 0; j < pays[j].getNom().length() - 1 - i; j++) {
+                if (pays[j].getNom().charAt(j) > pays[j + 1].getNom().charAt(j)) {
+                    pays[28] = pays[j];
+                    pays[j] = pays[j + 1];
+                    pays[j + 1] = pays[28];
+                    flag = false;
+                }
+            }
+            if (flag) {
+                break;
+            }
+        }
+        return pays;
+    }
+
+    public Pays_UE[] sortCapitale() {
+        boolean flag = true;
+        System.out.println();
+        for (int i = 0; i < pays.length; i++) {
+            for (int j = 0; j < pays[j].getCapitale().length() - 1 - i; j++) {
+                if (pays[j].getCapitale().charAt(j) > pays[j + 1].getCapitale().charAt(j)) {
+                    pays[28] = pays[j];
+                    pays[j] = pays[j + 1];
+                    pays[j + 1] = pays[28];
+                    flag = false;
+                }
+                if (flag) {
+                    break;
+                }
+            }
+        }
+        return pays;
+    }
+
+    public Pays_UE[] sortNbrHabitant() {
+        boolean flag = true;
+        for (int i = 0; i < pays.length; i++) {
+            if (pays[i].getNbrHabitant() > pays[i + 1].getNbrHabitant()) {
+                pays[28] = pays[i];
+                pays[i] = pays[i + 1];
+                pays[i + 1] = pays[28];
+                flag = false;
+            }
+            if (flag) {
+                break;
+            }
+        }
+        return pays;
+    }
+
+    public Pays_UE[] sortSuperficie() {
+        boolean flag = true;
+        for (int i = 0; i < pays.length; i++) {
+            if (pays[i].getSuperficie() > pays[i + 1].getSuperficie()) {
+                pays[28] = pays[i];
+                pays[i] = pays[i + 1];
+                pays[i + 1] = pays[28];
+                flag = false;
+            }
+            if (flag) {
+                break;
+            }
+        }
+        return pays;
+    }
+
+    public Pays_UE[] sortAnneeAdhesion() {
+        boolean flag = true;
+        for (int i = 0; i < pays.length; i++) {
+            if (pays[i].getAnneeAdhesion() > pays[i + 1].getAnneeAdhesion()) {
+                pays[28] = pays[i];
+                pays[i] = pays[i + 1];
+                pays[i + 1] = pays[28];
+                flag = false;
+            }
+            if (flag) {
+                break;
+            }
+        }
+        return pays;
+    }
+
+    public Pays_UE[] sortDensite() {
+        boolean flag = true;
+        for (int i = 0; i < pays.length; i++) {
+            if (pays[i].getDensite() > pays[i + 1].getDensite()) {
+                pays[28] = pays[i];
+                pays[i] = pays[i + 1];
+                pays[i + 1] = pays[28];
+                flag = false;
+            }
+            if (flag) {
+                break;
+            }
+        }
+        return pays;
     }
 }
