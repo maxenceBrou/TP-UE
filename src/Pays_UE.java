@@ -59,4 +59,13 @@ public class Pays_UE {
     public void setAnneeAdhesion(int anneeAdhesion) {
         this.anneeAdhesion = anneeAdhesion;
     }
+
+    @Override
+    public String toString() {
+        return  getNom() +
+                " " + getCapitale() +
+                " " +  getSuperficie() +
+                " " + getNbrHabitant() +
+                " " + getAnneeAdhesion();
+    }
 }

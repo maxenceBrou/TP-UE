@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class OrgaPaysUE {
 
-    public Pays_UE[] pays = new Pays_UE[28];
+    private Pays_UE[] pays = new Pays_UE[27];
 
-    public OrgaPaysUE() {
+    private OrgaPaysUE() {
         pays[0] = new Pays_UE("Allemagne", "Berlin", 83467117, 357569, 1958);
         pays[1] = new Pays_UE("Autriche", "Vienne", 9215956, 83887, 1995);
         pays[2] = new Pays_UE("Belgique", "Bruxelles", 11955308, 30667, 1958);
@@ -31,6 +33,7 @@ public class OrgaPaysUE {
         pays[25] = new Pays_UE("Suède", "Stockholm", 10605529, 447424, 1995);
         pays[26] = new Pays_UE("Tchéquie", "Prague", 10915839, 78871, 2004);
     }
+    public Pays_UE[] buffer = new Pays_UE[1];
 
 
     public Pays_UE[] sortNom() {
@@ -38,10 +41,10 @@ public class OrgaPaysUE {
         System.out.println();
         for (int i = 0; i < pays.length; i++) {
             for (int j = 0; j < pays[j].getNom().length() - 1 - i; j++) {
-                if (pays[j].getNom().charAt(j) > pays[j + 1].getNom().charAt(j)) {
-                    pays[28] = pays[j];
+                if (pays[j].getNom().compareTo(pays[j].getNom().substring(j)) < 0) {
+                    buffer[0] = pays[j];
                     pays[j] = pays[j + 1];
-                    pays[j + 1] = pays[28];
+                    pays[j + 1] = buffer[0];
                     flag = false;
                 }
             }
@@ -49,6 +52,10 @@ public class OrgaPaysUE {
                 break;
             }
         }
+        return pays;
+    }
+
+    public Pays_UE[] getPays() {
         return pays;
     }
 
@@ -133,5 +140,10 @@ public class OrgaPaysUE {
             }
         }
         return pays;
+    }
+
+    @Override
+    public String toString() {
+        return
     }
 }

@@ -15,6 +15,7 @@ public class Ihm {
         switch (In.readInteger()) {
             case 1:
                 gestion.sortNom();
+                System.out.println("Pays \t\t Capitale \t\t Nombre d'habitant\t\t Superficie \t\t Année d'adhésion \t\t Densité");
                 for (int i = 0; i < 27; i++) {
                     System.out.println();
                 }
@@ -30,9 +31,6 @@ public class Ihm {
                 break;
             case 5:
                 gestion.sortAnneeAdhesion();
-
-        }
-        for (int i = 0; i < OrgaPaysUE.; i++) {
 
         }
         System.out.println();
